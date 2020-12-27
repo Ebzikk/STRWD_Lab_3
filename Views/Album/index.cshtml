@@ -1,0 +1,16 @@
+@model IEnumerable<ArtsNamespace.Models.Album>
+<div class = box_style>
+<form action="Album/GetById" method="get" style="display:flex; flex-direction:column; width:50%;">
+    <select class="dropdown-item" name="id">
+    @foreach (var album in Model)
+    {
+        <option value=@album.AlbumId> @album.Name</option>
+    }
+    </select>
+    <br>
+    <input type="submit" class="btn btn-danger dropdown-toggle" value="Обрати категорію" />
+</form>
+<form action="Album/AddForm" method="get">
+    <input type="submit" class="btn btn-outline-info" value="Додати категорію" />
+</form>
+</div>
